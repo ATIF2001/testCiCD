@@ -13,7 +13,10 @@ This project deploys the static files in `src/` to Netlify.
 Add these repository secrets in GitHub under `Settings > Secrets and variables > Actions`:
 
 - `NETLIFY_AUTH_TOKEN`
-- `NETLIFY_SITE_ID`
+
+The Netlify site ID is configured directly in the GitHub Actions workflow:
+
+- `836a0ccb-b8bb-46b9-9003-fce0c59b4ba0`
 
 ## Useful Commands
 

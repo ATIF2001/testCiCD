@@ -83,7 +83,7 @@ jobs:
           overwrites-pull-request-comment: true
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_SITE_ID: 836a0ccb-b8bb-46b9-9003-fce0c59b4ba0
 
   deploy-main:
     name: Deploy main to Netlify
@@ -117,5 +117,5 @@ jobs:
           enable-commit-comment: false
           overwrites-pull-request-comment: true
         env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: nfp_CkQvK4vKhP2aJbooqnZnDn6thkeHr68o290d
+          NETLIFY_SITE_ID: 836a0ccb-b8bb-46b9-9003-fce0c59b4ba0
