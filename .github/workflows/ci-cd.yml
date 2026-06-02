@@ -4,11 +4,11 @@ on:
   pull_request:
     branches:
       - staging
-      - live
+      - main
   push:
     branches:
       - staging
-      - live
+      - main
 
 permissions:
   contents: read
@@ -83,15 +83,15 @@ jobs:
           overwrites-pull-request-comment: true
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_STAGING_SITE_ID }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
-  deploy-live:
-    name: Deploy live to Netlify
+  deploy-main:
+    name: Deploy main to Netlify
     runs-on: ubuntu-latest
     needs:
       - test
       - docker
-    if: github.event_name == 'push' && github.ref == 'refs/heads/live'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     environment: production
 
     steps:
@@ -117,5 +117,5 @@ jobs:
           enable-commit-comment: false
           overwrites-pull-request-comment: true
         env:
-          NETLIFY_AUTH_TOKEN: nfp_GLkFzve8Umr37ats32wYERSB9asfwjdYa5f7
-          NETLIFY_SITE_ID: 836a0ccb-b8bb-46b9-9003-fce0c59b4ba0
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
